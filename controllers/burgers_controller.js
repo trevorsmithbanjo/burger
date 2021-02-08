@@ -1,6 +1,7 @@
 const express = require("express");
-const buger = require("./models/burger.js");
 
-const router = {};
+const router = express.router();
+
+const burger = require("../models/burger.js");
 
 module.exports = router;
