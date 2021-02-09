@@ -6,7 +6,7 @@ const burger = {
         orm.selectAll('burgers', (res) => cb(res));
     },
 
-    create(cols, vals, cb) {
+    create(vals, cb) {
         orm.insertOne('burgers', 'burger_name', vals, (res) => cb(res));
     },
 

@@ -63,9 +63,7 @@ const orm = {
             if (err) throw err;
             cb(results);
         })
-    };
+    }
 };
-
-UPDATE burgers SET devoured WHERE id = req.params.id
 
 module.exports = orm;
