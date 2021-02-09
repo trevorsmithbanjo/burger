@@ -50,11 +50,11 @@ const orm = {
             cb(results);
         })
     },
-    updateOne(table, objColVals, condition, cb) {
+    updateOne(table, cols, condition, cb) {
         let queryString = `UPDATE ${table}`;
 
         queryString += ' SET ';
-        queryString += convertObj(objColVals);
+        queryString += cols;
         queryString += ' WHERE ';
         queryString += condition;
 
@@ -65,5 +65,7 @@ const orm = {
         })
     };
 };
+
+UPDATE burgers SET devoured WHERE id = req.params.id
 
 module.exports = orm;

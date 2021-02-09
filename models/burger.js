@@ -7,11 +7,11 @@ const burger = {
     },
 
     create(cols, vals, cb) {
-        orm.insertOne('burgers', cols, vals, (res) => cb(res));
+        orm.insertOne('burgers', 'burger_name', vals, (res) => cb(res));
     },
 
-    devour(objColsVals, condition, cb) {
-        orm.updateOne('burgers', objColsVals, condition, (res) => cb(res));
+    devour(condition, cb) {
+        orm.updateOne('burgers', 'devoured = true', condition, (res) => cb(res));
     }
 };
 
