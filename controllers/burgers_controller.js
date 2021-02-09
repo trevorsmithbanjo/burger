@@ -15,12 +15,12 @@ router.get('/', (req, res) => {
 });
 
 router.post('/api/burgers', (req, res) => {
-    burger.create([req.body], (result) => {
+    burger.create([req.body.burger_name], (result) => {
         res.json({ id: result.insertedId });
     });
 });
 
-router.put('api/burgers/:id', (req, res) => {
+router.put('/api/burgers/:id', (req, res) => {
     const condition = `id = ${req.params.id}`;
 
     console.log('condition', condition);
