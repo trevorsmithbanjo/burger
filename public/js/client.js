@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             }).then((response) => {
                 if (response.ok) {
                     console.log(`burger with ID ${id} devoured`);
-                    location.reload('/');
+                    location.reload();
                 }
                 else {
                     alert('something went wrong!');

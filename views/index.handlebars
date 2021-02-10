@@ -6,51 +6,39 @@
     </header>
 
     <div class="row my-3 py-2 justify-content-center">
-
         <div class="col-4">
-
             {{#each burgers}}
             {{#unless devoured}}
-
             <p class="mb-2 text-uppercase fs-4 bg-white border-0 rounded-1 py-2"><span
                     class="label px-2">{{this.id}}</span>
                 <span class="label px-2">{{this.burger_name}}</span>
                 <button data-id="{{this.id}}" class="devour-burger btn btn-info">Devour it!</button>
             </p>
-
             {{/unless}}
             {{/each}}
-
         </div>
 
         <div class="col-4">
-
             {{#each burgers}}
             {{#if devoured}}
-
             <p class="mb-2 text-uppercase fs-4 bg-white border-0 rounded-1 py-2 text-muted"><span
                     class="label px-2">{{this.id}}</span>
                 <span class="label px-2">{{this.burger_name}}</span>
             </p>
-
             {{/if}}
             {{/each}}
-
         </div>
-
     </div>
+
     <div class="row justify-content-center">
         <div class="col-4 ">
             <form id="create-form">
                 <div class="mb-3">
                     <textarea class="form-control" id="burg" rows="3"></textarea>
                     <button type="submit" class="btn btn-secondary my-2">Submit</button><br>
-                    <label for="burg" class="form-label fs-5">Enter a burger you want to eat. Click "Submit"
-                        button.</label>
+                    <label for="burg" class="form-label fs-5">Enter a burger you want to eat.</label>
                 </div>
             </form>
         </div>
     </div>
-
-
 </div>
