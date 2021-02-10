@@ -1,34 +1,56 @@
-<h1>Eat-Da-Burger</h1>
+<div class="container text-center mt-5">
 
-<ul>
-    {{#each burgers}}
-    {{#unless devoured}}
-    <li>
-        <p><span class="label">{{this.id}}</span></p>
-        <p><span class="label">{{this.burger_name}}</span></p>
+    <header class="my-4 py-2">
+        <h1>Eat-Da-Burger</h1>
+        <img src="/assets/img/eat_da_burger.png" alt="Burger Image" height="275">
+    </header>
 
-        <button data-id="{{this.id}}" class="devour-burger">Devour it!</button>
-    </li>
-    {{/unless}}
-    {{/each}}
-</ul>
+    <div class="row my-3 py-2 justify-content-center">
 
-<ul>
-    {{#each burgers}}
-    {{#if devoured}}
-    <li>
-        <p><span class="label">{{this.id}}</span></p>
-        <p><span class="label">{{this.burger_name}}</span></p>
-    </li>
-    {{/if}}
-    {{/each}}
-</ul>
+        <div class="col-4">
 
+            {{#each burgers}}
+            {{#unless devoured}}
 
-<form id="create-form">
-    <div class="form-group">
-        <input type="text" id="burg" name="burger">
-        <button type="submit">Submit</button>
-        <label for="burg">Enter a burger you want to eat. Click "Submit" button.</label>
+            <p class="mb-2 text-uppercase fs-4 bg-white border-0 rounded-1 py-2"><span
+                    class="label px-2">{{this.id}}</span>
+                <span class="label px-2">{{this.burger_name}}</span>
+                <button data-id="{{this.id}}" class="devour-burger btn btn-info">Devour it!</button>
+            </p>
+
+            {{/unless}}
+            {{/each}}
+
+        </div>
+
+        <div class="col-4">
+
+            {{#each burgers}}
+            {{#if devoured}}
+
+            <p class="mb-2 text-uppercase fs-4 bg-white border-0 rounded-1 py-2 text-muted"><span
+                    class="label px-2">{{this.id}}</span>
+                <span class="label px-2">{{this.burger_name}}</span>
+            </p>
+
+            {{/if}}
+            {{/each}}
+
+        </div>
+
     </div>
-</form>
+    <div class="row justify-content-center">
+        <div class="col-4 ">
+            <form id="create-form">
+                <div class="mb-3">
+                    <textarea class="form-control" id="burg" rows="3"></textarea>
+                    <button type="submit" class="btn btn-secondary my-2">Submit</button><br>
+                    <label for="burg" class="form-label fs-5">Enter a burger you want to eat. Click "Submit"
+                        button.</label>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
